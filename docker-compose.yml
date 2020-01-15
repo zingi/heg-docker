@@ -1,0 +1,11 @@
+version: "3.7"
+services: 
+  heg:
+    image: zingi/heg:1.0.0
+    container_name: heg
+    network_mode: "host"
+    volumes: 
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+      # - /path/to/my/folder/with/hdf-files/:/root/data
+    environment: 
+      - DISPLAY
