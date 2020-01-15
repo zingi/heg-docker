@@ -28,6 +28,9 @@ RUN mkdir /opt/heg-install && \
 
 ENV PATH /opt/heg/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
+ENV MRTDATADIR /opt/heg/data
+ENV PGSHOME /opt/heg/TOOLKIT_MTD
+ENV HEGUSER heguser
 
 CMD [ "bash", "-c", "tail -f /dev/null" ]
 
