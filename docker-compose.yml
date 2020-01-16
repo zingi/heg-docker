@@ -1,7 +1,7 @@
 version: "3.7"
 services: 
   heg:
-    image: zingi/heg:1.0.0
+    image: zingi/heg:1.1.0
     container_name: heg
     network_mode: "host"
     volumes: 
