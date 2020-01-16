@@ -26,11 +26,17 @@ RUN mkdir /opt/heg-install && \
     printf 'y\n/opt/heg\ny\n/usr/bin\nheguser\n' | ./install && \
     rm -rf /opt/heg-install
 
+# set environment variables
 ENV PATH /opt/heg/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
 ENV MRTDATADIR /opt/heg/data
 ENV PGSHOME /opt/heg/TOOLKIT_MTD
 ENV HEGUSER heguser
+
+# install node.js
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash && \
+    . /root/.bashrc && \
+    nvm install v12.14.1
 
 CMD [ "bash", "-c", "tail -f /dev/null" ]
 
