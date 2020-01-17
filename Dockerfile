@@ -9,7 +9,8 @@ RUN apt-get update && \
     apt-get install libxrender1 -y && \
     apt-get install libxtst6 -y && \
     apt-get install xvfb -y && \
-    apt-get install libfontconfig1 -y
+    apt-get install libfontconfig1 -y && \
+    apt-get install libgomp1 -y
 
 # install java 1.8 runtime
 RUN wget -O- https://apt.corretto.aws/corretto.key | apt-key add - && \
