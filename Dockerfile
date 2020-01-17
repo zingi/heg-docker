@@ -9,7 +9,8 @@ RUN apt-get update && \
     apt-get install libxrender1 -y && \
     apt-get install libxtst6 -y && \
     apt-get install xvfb -y && \
-    apt-get install libfontconfig1 -y
+    apt-get install libfontconfig1 -y && \
+    apt-get install libgomp1 -y
 
 # install java 1.8 runtime
 RUN wget -O- https://apt.corretto.aws/corretto.key | apt-key add - && \
@@ -26,6 +27,7 @@ RUN mkdir /opt/heg-install && \
     printf 'y\n/opt/heg\ny\n/usr/bin\nheguser\n' | ./install && \
     rm -rf /opt/heg-install
 
+# set environment variables
 ENV PATH /opt/heg/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-amazon-corretto
 ENV MRTDATADIR /opt/heg/data
